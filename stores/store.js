@@ -26,15 +26,15 @@ export default class Store {
           quantity: newQuantity
         });
       } else {
-        this.cart[cartId].quantity = this.cart[cartId].quantity + newQuantity;
+        this.cart[cartId].quantity += newQuantity;
       }
     }
     //reset quantity
     this.resetQuantity()
   }
 
-  @action removeFromCart = (index) => {
-    this.cart.splice(index, 1)
+  @action removeFromCart = (productId) => {
+    this.cart.splice(productId, 1)
   }
 
   @action setQuantity = (quantity) => {

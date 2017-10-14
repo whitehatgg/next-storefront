@@ -1,23 +1,43 @@
 import { inject, observer } from 'mobx-react'
+import CartItem from './CartItem'
 
 export default inject('store')(observer(({ store }) => {
-  //calculate quant
-  const cartQuantity = store.cart.reduce((accumulator, product) => {
-    return accumulator + product.quantity
-  }, 0)
-  //return component
   return (
-    <div className="cart">
-      <span>My Cart</span> <span className={ store.cart.length ? 'light' : '' }>{ cartQuantity }</span>
+    <div className="cart-list">
+      <table className="cart-table">
+        <thead>
+          <tr>
+          <td>Product</td>
+          <td></td>
+          <td>Quantity</td>
+          <td>Total</td>
+          <td>Action</td>
+          </tr>
+        </thead>
+        <tbody>
+        {
+          store.cart.map(( product, index ) => {
+            return <CartItem product={ store.products[product.id] } quantity={ product.quantity } id={ product.id } key={ index } remove={() => store.removeFromCart(index, 1) } />
+          })
+        }
+        </tbody>
+      </table>
+
       <style jsx>{`
-        .cart {
-          padding: 15px;
-          display: inline-block;
-          float: right;
+        .cart-list  {
+          background-color: #ffffff;
+          margin: auto;
+          width: 70%;
+          padding: 30px;
         }
 
-        .cart span.light {
-          color: #e74c3c;
+        .cart-list .cart-table  {
+          width: 100%;
+          margin: auto;
+        }
+
+        .cart-list .cart-table thead {
+          text-align: left;
         }
       `}</style>
     </div>

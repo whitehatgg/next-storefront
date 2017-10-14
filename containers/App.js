@@ -4,9 +4,9 @@ import { withRouter } from 'next/router'
 import formats from '../constants/formats'
 import withStore from '../enhancers/withStore'
 
-export default withStore(withRouter(({ children, store, router, href }) => (
+export default withStore(withRouter(({ children, store, router }) => (
   <Provider store={store} router={router} >
-  	<IntlProvider locale='en' formats={ formats } defaultFormats={ formats }> 
+  	<IntlProvider locale="en" formats={ formats } defaultFormats={ formats } > 
     	{ children }
     </IntlProvider>
   </Provider>

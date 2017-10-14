@@ -1,4 +1,4 @@
-import { compose, withState, setStatic, withProps } from 'recompose'
+import { compose, setStatic, withProps } from 'recompose'
 import { initStore } from '../middlewares/storeMiddleware'
 import Store from '../stores/store'
 import products from '../data/products.json'

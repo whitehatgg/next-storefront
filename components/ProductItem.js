@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default ({ product, id, add }) => {
   return (
-  	<div className="product" >
+  	<div className="product-item" >
 	    <div className="overlay-container">
 	    	<img src={ `/static/${ product.image }` } />
 	    	<div className="overlay">
@@ -16,7 +16,7 @@ export default ({ product, id, add }) => {
 	    <span className="price"><FormattedNumber value={ product.price } style="currency" currency={ 'USD' } /></span>
 
 		<style jsx>{`
-			.product {
+			.product-item {
 				display: inline-block;
 				margin: 0.75em;
 				width: 100%;
@@ -24,26 +24,26 @@ export default ({ product, id, add }) => {
 				position: relative;
 			}
 
-			.product .overlay-container {
+			.product-item .overlay-container {
 				position: relative;
 				margin-bottom: 0.5em;
 			}
 
-			.product .overlay-container .overlay {
+			.product-item .overlay-container .overlay {
 				display: none;
 			}
 
-			.product h4 {
+			.product-item h4 {
 				font-size: 0.8em;
 				text-transform: uppercase;
 			}
 
-			.product .price {
+			.product-item .price {
 				display: block;
 				padding-bottom: 10px;
 			}
 
-			.product .overlay-container img {
+			.product-item .overlay-container img {
 				width: 18em;
 				height: 18em;
 				position: relative;
@@ -53,13 +53,13 @@ export default ({ product, id, add }) => {
 			}
 
 			@media(max-width: 600px) {
-				.product .overlay-container img {
+				.product-item .overlay-container img {
 					width: 100vw;
 					height: 100vw;
 				}
 			}
 
-			.product:hover .overlay-container .overlay {
+			.product-item:hover .overlay-container .overlay {
 				display: block;
 				position: absolute;
 				background-color:rgba(0, 0, 0, 0.5);
@@ -73,16 +73,8 @@ export default ({ product, id, add }) => {
 				transition: all 0.25s;
 			}
 
-			.product:hover {
+			.product-item:hover {
 				box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-			}
-
-			.product:hover:before {
-				opacity: 1;
-			}
-
-			.product:hover:after {
-				top: 50%;
 			}
 		`}</style>
     </div>

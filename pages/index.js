@@ -5,7 +5,7 @@ import CategoryPage from '../components/CategoryPage'
 export default () => (
   <App>
   	<Layout title="Category">
-    	<CategoryPage />
+	  <CategoryPage />
     </Layout>
   </App>
 )

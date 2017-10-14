@@ -1,7 +1,7 @@
 import { inject, observer } from 'mobx-react'
 import Link from 'next/link'
 import Head from 'next/head'
-import CartList from './CartList'
+import CartMenu from './CartMenu'
 
 export default inject('store')(observer(({ children, title, store }) => {
   return (
@@ -24,7 +24,7 @@ export default inject('store')(observer(({ children, title, store }) => {
           </ul>
         </nav>
         <div className="col col-3">
-          <CartList store={ store } />
+          <CartMenu />
         </div>
       </div>
       <div className="content">

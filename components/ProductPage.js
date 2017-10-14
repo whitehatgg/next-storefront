@@ -1,11 +1,17 @@
 import { FormattedNumber } from 'react-intl'
 import { inject, observer } from 'mobx-react'
 import Link from 'next/link'
-import ProductList from './ProductList'
 
 export default inject('store', 'router')(observer(({ store, router }) => {
   const id = router.query.id
   const product = store.products[id]
+  //render message if can't find product
+  if (!product) {
+    return (
+      <p>Product not available <Link href="/"><a>Go back home</a></Link></p>
+    )
+  }
+
   return (
     <div className="product-page">
       <ul className="breadcrumb">
