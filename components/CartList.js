@@ -8,7 +8,7 @@ export default inject('store')(observer(({ store }) => {
   //return component
   return (
     <div className="cart">
-      <span>Cart</span> <span className={ store.cart.length ? 'light' : '' }>{ cartQuantity }</span>
+      <span>My Cart</span> <span className={ store.cart.length ? 'light' : '' }>{ cartQuantity }</span>
       <style jsx>{`
         .cart {
           padding: 15px;

@@ -10,7 +10,7 @@ export default compose(
     async ({ req }) => {
       const isServer = !!req
       const store = initStore(Store, products, isServer)
-      return { isServer }
+      return { isServer, store }
     }
   ),
   // add store to props

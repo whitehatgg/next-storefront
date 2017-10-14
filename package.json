@@ -12,6 +12,7 @@
     "next": "latest",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-intl": "^2.4.0",
     "recompose": "^0.26.0"
   },
   "devDependencies": {
