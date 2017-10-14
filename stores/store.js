@@ -11,11 +11,11 @@ export default class Store {
     this.products = products
   }
 
-  @action addToCart = () => {
-    this.cart.push('test')
+  @action addToCart = (product) => {
+    this.cart.push(product)
   }
 
-  @action removeFromCart = () => {
-    this.cart.pop();
+  @action removeFromCart = (index) => {
+    this.cart.splice(index, 1)
   }
 }

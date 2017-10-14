@@ -1,20 +1,20 @@
-export default ({ cart }) => {
+import { inject, observer } from 'mobx-react'
+
+export default inject('store')(observer(({ store }) => {
   return (
-    <div className={cart.length ? 'light' : ''}>
-      Cart {cart.length}
+    <div className="cart">
+      <span>Cart</span> <span className={ store.cart.length ? 'light' : '' }>{ store.cart.length }</span>
       <style jsx>{`
-        div {
+        .cart {
           padding: 15px;
-          color: #82FA58;
           display: inline-block;
-          font: 50px menlo, monaco, monospace;
-          background-color: #000;
+          float: right;
         }
 
-        .light {
-          background-color: #999;
+        .cart span.light {
+          color: #e74c3c;
         }
       `}</style>
     </div>
   )
-}
+}))

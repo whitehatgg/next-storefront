@@ -1,11 +1,11 @@
-import Page from '../containers/Page'
+import App from '../containers/App'
 import Layout from '../components/Layout'
-import ProductList from '../components/ProductList'
+import CategoryPage from '../components/CategoryPage'
 
 export default () => (
-  <Page>
+  <App>
   	<Layout title="Category">
-    	<ProductList />
+    	<CategoryPage />
     </Layout>
-  </Page>
+  </App>
 )

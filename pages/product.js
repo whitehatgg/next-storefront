@@ -1,11 +1,10 @@
-import Page from '../containers/Page'
+import App from '../containers/App'
 import Layout from '../components/Layout'
-import ProductList from '../components/ProductList'
 
 export default () => (
   <Page>
   	<Layout title="Product">
-    	<ProductList />
+    	Product
     </Layout>
-  </Page>
+  </App>
 )
