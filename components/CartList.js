@@ -2,6 +2,7 @@ import { inject, observer } from 'mobx-react'
 import CartItem from './CartItem'
 
 export default inject('store')(observer(({ store }) => {
+  //render component
   return (
     <div className="cart-list">
       <table className="cart-table">
@@ -16,8 +17,14 @@ export default inject('store')(observer(({ store }) => {
         </thead>
         <tbody>
         {
-          store.cart.map(( product, index ) => {
-            return <CartItem product={ store.products[product.id] } quantity={ product.quantity } id={ product.id } key={ index } remove={() => store.removeFromCart(index, 1) } />
+          store.cart.map(( cartProduct ) => {
+            return <CartItem 
+              product={ store.getProductById(cartProduct.id) }
+              quantity={ cartProduct.quantity }
+              key={ cartProduct.id }
+              remove={() => store.removeFromCart(cartProduct.id, 1) } 
+              setQuantity={ (event) => store.setCartQuantity(cartProduct.id, event.target.value) }
+            />
           })
         }
         </tbody>

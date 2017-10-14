@@ -1,14 +1,14 @@
 import { FormattedNumber } from 'react-intl'
 import Link from 'next/link'
 
-export default ({ product, id, add }) => {
+export default ({ product, add }) => {
   return (
   	<div className="product-item" >
 	    <div className="overlay-container">
 	    	<img src={ `/static/${ product.image }` } />
 	    	<div className="overlay">
 			    <button onClick={ add }>Add to Cart</button>
-			    <Link href={{ pathname: '/product', query: { id: id } }}><button>View Details</button></Link>
+			    <Link href={{ pathname: '/product', query: { id: product.id } }}><button>View Details</button></Link>
 	    	</div>
 	    </div>
 	    <span>{ product.brand }</span>

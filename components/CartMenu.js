@@ -1,14 +1,10 @@
 import { inject, observer } from 'mobx-react'
 
 export default inject('store')(observer(({ store }) => {
-  //calculate quant
-  const cartQuantity = store.cart.reduce((accumulator, product) => {
-    return accumulator + product.quantity
-  }, 0)
   //return component
   return (
     <div className="cart-menu">
-      <span>My Cart</span> (<span className={ store.cart.length ? 'light' : '' }>{ cartQuantity }</span>)
+      <span>My Cart</span> (<span className={ store.cart.length ? 'light' : '' }>{ store.cartCount }</span>)
       <style jsx>{`
         .cart-menu {
           padding: 15px;

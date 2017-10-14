@@ -5,8 +5,8 @@ export default inject('store')(observer(({ store }) => {
   return (
     <div className="product-list">
     {
-      store.products.map(( product, index ) => {
-        return <ProductItem product={ product } id={ index } key={ index } add={() => store.addToCart(index, 1) } />
+      store.products.map(( product ) => {
+        return <ProductItem product={ product } key={ product.id } add={() => store.addToCart(product.id, 1) } />
       })
     }
     </div>
