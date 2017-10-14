@@ -21,7 +21,6 @@ export default inject('store')(observer(({ store }) => {
           background-size: cover;
           height: 25em;
           width: 100vw;
-          display: table;
         }
 
         .hero-container .hero {
@@ -37,7 +36,6 @@ export default inject('store')(observer(({ store }) => {
           box-shadow: inset -1px -3px 5px rgba(0,0,0,0.5), inset 1px 3px 5px rgba(0,0,0,0.5);
           text-shadow: 1px 3px 5px rgba(0,0,0,0.5), -1px -3px 5px rgba(0,0,0,0.5);
           vertical-align: middle;
-          display: table-cell;
         }
 
         .hero-container .hero h1 {

@@ -1,4 +1,6 @@
-export default ({ product, add }) => {
+import Link from 'next/link'
+
+export default ({ product, id, add }) => {
   return (
   	<div className="product" >
     <h3>{ product.title }</h3>
@@ -6,6 +8,7 @@ export default ({ product, add }) => {
     <span>{ product.brand }</span>
     <p>{ product.description }</p>
     <button onClick={ add }>Add to Cart</button>
+    <Link href={{ pathname: '/product', query: { id: id } }}><button>View Details</button></Link>
 	<style jsx>{`
 		.product {
 			display: inline-block;

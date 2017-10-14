@@ -13,14 +13,14 @@ export default inject('store')(observer(({ children, title, store }) => {
       </Head>
       <div className="header">
         <h1 className="col col-3">
-          <Link href="/"><a>
+          <Link href="/">
             <img src="/static/logo.png"/>
-          </a></Link>
+          </Link>
         </h1>
         <nav className="col col-6">
           <ul>
-            <li><Link href="/"><a>Home</a></Link></li>
-            <li><Link href="/cart"><a>Cart</a></Link></li>
+            <li><Link prefetch href="/"><a>Home</a></Link></li>
+            <li><Link prefetch href="/cart"><a>Cart</a></Link></li>
           </ul>
         </nav>
         <div className="col col-3">
@@ -41,7 +41,7 @@ export default inject('store')(observer(({ children, title, store }) => {
 
         .col {
           float: none;
-          display: table-cell;
+          display: inline-block;
           vertical-align: middle;
         }
 
@@ -54,7 +54,7 @@ export default inject('store')(observer(({ children, title, store }) => {
         }
 
         .container .header {
-          display: table;
+          display: block;
           width: 100%;
         }
 
@@ -64,7 +64,7 @@ export default inject('store')(observer(({ children, title, store }) => {
 
         .container .header nav {
           display: inline-block;
-          display: table-cell;
+          display: inline-block;
           vertical-align: middle;
           float: none;
           text-align: center;
