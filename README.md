@@ -9,10 +9,11 @@ curl https://codeload.github.com/gonzalobenitez/next-storefront/tar.gz/master | 
 cd next-storefront
 ```
 
-Install it and run:
+Install it, test and run:
 
 ```bash
 npm install
+npm run test
 npm run dev
 ```
 

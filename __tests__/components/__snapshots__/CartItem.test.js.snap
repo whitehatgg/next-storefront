@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartItem Test CartItem shows item 1`] = `
+<div>
+  <tr
+    className="jsx-3374668489 cart-item"
+  >
+    <td
+      className="jsx-3374668489"
+    >
+      <img
+        className="jsx-3374668489"
+        onClick={[Function]}
+        src="/static/blue-stripe-stoneware-plate.jpg"
+      />
+    </td>
+    <td
+      className="jsx-3374668489"
+    >
+      <div
+        className="jsx-3374668489"
+      >
+        Kiriko
+      </div>
+      <div
+        className="jsx-3374668489"
+      >
+        Blue Stripe Stoneware Plate
+      </div>
+    </td>
+    <td
+      className="jsx-3374668489"
+    >
+      <input
+        className="jsx-3374668489"
+        min="1"
+        onChange={[Function]}
+        type="number"
+        value={1}
+      />
+    </td>
+    <td
+      className="jsx-3374668489"
+    >
+      <span
+        className="jsx-3374668489 price"
+      >
+        <span>
+          $40.00
+        </span>
+      </span>
+    </td>
+    <td
+      className="jsx-3374668489"
+    >
+      <button
+        className="jsx-3374668489"
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </td>
+  </tr>
+</div>
+`;
