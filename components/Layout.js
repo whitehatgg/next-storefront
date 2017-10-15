@@ -9,7 +9,7 @@ export default inject('store')(observer(({ children, title, store }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
-        <title>{ title }</title>
+        <title>{ `${title} - Next Storefront` }</title>
       </Head>
       <div className="header">
         <h1 className="col col-3">

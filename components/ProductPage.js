@@ -3,8 +3,7 @@ import { inject, observer } from 'mobx-react'
 import Link from 'next/link'
 
 export default inject('store', 'router')(observer(({ store, router }) => {
-  const id = router.query.id
-  const product = store.getProductById(id)
+  const product = store.getProductById(router.query.id)
   //render message if can't find product
   if (!product) {
     return (
@@ -26,7 +25,7 @@ export default inject('store', 'router')(observer(({ store, router }) => {
         <span><FormattedNumber value={ product.price } style="currency" currency={ 'USD' } /></span>
         <p>{ product.description }</p>
         <input type="number" min="1" value={ store.quantity } onChange={ (event) => store.setProductQuantity(event.target.value) } />
-        <button onClick={ () => store.addToCart(id, store.quantity) }>Add to Cart</button>
+        <button onClick={ () => store.addToCart(product.id, store.quantity) }>Add to Cart</button>
       </div>
 
       <style jsx>{`

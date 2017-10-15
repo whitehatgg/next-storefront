@@ -15,7 +15,7 @@ export default ({ product, quantity, remove, setQuantity }) => {
 		    <input type="number" min="1" value={ quantity } onChange={ setQuantity } />
 	    </td>
   		<td>
-		    <span className="price"><FormattedNumber value={ product.price } style="currency" currency={ 'USD' } /></span>
+		    <span className="price"><FormattedNumber value={ product.price * quantity } style="currency" currency={ 'USD' } /></span>
 	    </td>
   		<td>
 		    <button onClick={ remove }>X</button>

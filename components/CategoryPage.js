@@ -6,12 +6,12 @@ export default inject('store')(observer(({ store }) => {
     <div className="category-page">
       <div className="hero-container">
         <div className="hero">
-          <h1>Plates</h1>
+          <h2>Plates</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque mollis aliquam..</p>
         </div>
       </div>
 
-      <h2>Products</h2>
+      <h3>Products</h3>
       <ProductList products={ store.products } addToCart={ store.addToCart } />
 
       <style jsx>{`
@@ -38,7 +38,7 @@ export default inject('store')(observer(({ store }) => {
           vertical-align: middle;
         }
 
-        .hero-container .hero h1 {
+        .hero-container .hero h2 {
           font-size: 3em;
         }
 

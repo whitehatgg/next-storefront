@@ -1,7 +1,6 @@
 import { inject, observer } from 'mobx-react'
 
 export default inject('store')(observer(({ store }) => {
-  //return component
   return (
     <div className="cart-menu">
       <span>My Cart</span> (<span className={ store.cart.length ? 'light' : '' }>{ store.cartCount }</span>)
