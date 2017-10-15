@@ -8,11 +8,16 @@ exports[`CartItem Test CartItem shows item 1`] = `
     <td
       className="jsx-1118603124"
     >
-      <img
+      <a
         className="jsx-1118603124"
+        href="/product?id=12"
         onClick={[Function]}
-        src="/static/blue-stripe-stoneware-plate.jpg"
-      />
+      >
+        <img
+          className="jsx-1118603124"
+          src="/static/blue-stripe-stoneware-plate.jpg"
+        />
+      </a>
     </td>
     <td
       className="jsx-1118603124"
