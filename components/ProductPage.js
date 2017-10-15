@@ -7,7 +7,9 @@ export default inject('store', 'router')(observer(({ store, router }) => {
   //render message if can't find product
   if (!product) {
     return (
-      <p>Product not available <Link href="/"><a>Go back home</a></Link></p>
+      <div className="error">
+        <p>Product not available <Link href="/"><a>Go back home</a></Link></p>
+      </div>
     )
   }
 
@@ -16,21 +18,32 @@ export default inject('store', 'router')(observer(({ store, router }) => {
       <ul className="breadcrumb">
         <li><Link href="/"><a>Home</a></Link></li>
         <li>/</li>
-        <li>{ product.title }</li>
+        <li className="current">{ product.title }</li>
       </ul>
       <div className="product-details">
         <img className="product-img" src={ `/static/${ product.image }` } />
-        <span>{ product.brand }</span>
-        <h2>{ product.title }</h2>
-        <span><FormattedNumber value={ product.price } style="currency" currency={ 'USD' } /></span>
-        <p>{ product.description }</p>
-        <input type="number" min="1" value={ store.quantity } onChange={ (event) => store.setProductQuantity(event.target.value) } />
-        <button onClick={ () => store.addToCart(product.id, store.quantity) }>Add to Cart</button>
+        <div className="product-content">
+          <span className="brand">{ product.brand }</span>
+          <h2>{ product.title }</h2>
+          <span className="price"><FormattedNumber value={ product.price } style="currency" currency={ 'USD' } /></span>
+          <p className="description">{ product.description }</p>
+          <input type="number" min="1" value={ store.quantity } onChange={ (event) => store.setProductQuantity(event.target.value) } />
+          <button onClick={ () => store.addToCart(product.id, store.quantity) }>Add to Cart</button>
+        </div>
       </div>
 
       <style jsx>{`
+        .product-page {
+          background-color: #ffffff;
+          padding-bottom: 100px;
+        }
+
         ul.breadcrumb {
           list-style: none;
+          padding: 30px 0 60px 0;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 0.em;
         }
 
         ul.breadcrumb li {
@@ -38,8 +51,40 @@ export default inject('store', 'router')(observer(({ store, router }) => {
           padding-right: 10px;
         }
 
+        ul.breadcrumb li.current {
+          color: #a8a8a8;
+        }
+
         img.product-img {
           float: left;
+        }
+
+        .product-page .product-details {
+          width: 80%;
+          margin: auto;
+          padding-right: 80px;
+        }
+
+        .product-page .product-details img {
+          margin-right: 80px;
+        }
+
+        .product-page .product-details .brand {
+          padding-bottom: 21px;
+          display: block;
+        }
+
+        .product-page .product-details .price {
+          color: #a8a8a8;
+          display: block;
+          padding: 15px;
+          font-size: 1.2em;
+          font-family: "Times New Roman", Georgia, Serif;
+        }
+
+        .product-page .product-details .description {
+          margin-bottom: 40px;
+          line-height: 1.5;
         }
       `}</style>
     </div>

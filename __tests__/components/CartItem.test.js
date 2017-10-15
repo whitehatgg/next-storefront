@@ -1,5 +1,3 @@
-/* eslint-env jest */
-
 import { shallow } from 'enzyme'
 import { IntlProvider } from 'react-intl'
 import renderer from 'react-test-renderer'

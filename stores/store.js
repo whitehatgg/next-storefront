@@ -4,18 +4,41 @@ export default class Store {
   @observable products = []
   @observable checkoutBool = false
   @observable cart = []
-  @observable cartSubTotal = 0
-  @observable cartTotal = 0
+  @observable tax = 0.10
   @observable quantity = 1
 
   constructor (products) {
     this.products = products
   }
 
+  getProductById = (productId) => {
+    const newProductId = parseInt(productId, 10)
+    return this.products.find(product => product.id === newProductId)
+  }
+
+  findProductInCart = (productId) => {
+    const newProductId = parseInt(productId, 10)
+    return this.cart.findIndex((product) => {
+      return product.id === newProductId
+    })
+  }
+
   @computed get cartCount() {
-    return this.cart.reduce((accumulator, product) => {
-      return accumulator + product.quantity
+    return this.cart.reduce((accumulator, cartProduct) => {
+      return accumulator + cartProduct.quantity
     }, 0)
+  }
+
+  @computed get cartSubTotal() {
+    return this.cart.reduce((accumulator, cartProduct) => {
+      const product = this.getProductById(cartProduct.id)
+      return accumulator + (cartProduct.quantity * product.price)
+    }, 0)
+  }
+
+  @computed get cartTotal() {
+    let total = this.cartSubTotal
+    return total += total * this.tax
   }
 
   @action addToCart = (productId, quantity) => {
@@ -59,17 +82,5 @@ export default class Store {
 
   @action resetProductQuantity = () => {
     this.setProductQuantity(1)
-  }
-
-  @action getProductById = (productId) => {
-    const newProductId = parseInt(productId, 10)
-    return this.products.find(product => product.id === newProductId)
-  }
-
-  @action findProductInCart = (productId) => {
-    const newProductId = parseInt(productId, 10)
-    return this.cart.findIndex((product) => {
-      return product.id === newProductId
-    })
   }
 }

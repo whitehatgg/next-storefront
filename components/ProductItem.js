@@ -36,6 +36,7 @@ export default ({ product, add }) => {
 			.product-item h4 {
 				font-size: 0.8em;
 				text-transform: uppercase;
+				padding: 10px 0;
 			}
 
 			.product-item .price {

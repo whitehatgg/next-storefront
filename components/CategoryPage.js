@@ -7,11 +7,10 @@ export default inject('store')(observer(({ store }) => {
       <div className="hero-container">
         <div className="hero">
           <h2>Plates</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque mollis aliquam..</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque mollis aliquam.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
 
-      <h3>Products</h3>
       <ProductList products={ store.products } addToCart={ store.addToCart } />
 
       <style jsx>{`
@@ -21,9 +20,11 @@ export default inject('store')(observer(({ store }) => {
           background-size: cover;
           height: 25em;
           width: 100vw;
+          margin-bottom: 30px;
         }
 
         .hero-container .hero {
+          padding: 130px 20px;
           position: absolute;
           text-align: center;
           width: 50vw;
@@ -32,7 +33,7 @@ export default inject('store')(observer(({ store }) => {
           height: 100%;
           transform: translate(-50%, -50%);
           color: white;
-          background: linear-gradient(to bottom, #16222A , #24292e); 
+          background: linear-gradient(to bottom, #514e4a , #3a3835); 
           box-shadow: inset -1px -3px 5px rgba(0,0,0,0.5), inset 1px 3px 5px rgba(0,0,0,0.5);
           text-shadow: 1px 3px 5px rgba(0,0,0,0.5), -1px -3px 5px rgba(0,0,0,0.5);
           vertical-align: middle;
@@ -40,10 +41,16 @@ export default inject('store')(observer(({ store }) => {
 
         .hero-container .hero h2 {
           font-size: 3em;
+          border-bottom: 1px solid #fff;
+          display: inline-block;
+          padding-bottom: 10px;
+          margin-bottom: 15px;
+          padding-left: 0;
+          padding-right: 0;
         }
 
         .hero-container .hero p {
-
+          color: #ffffff;
         }
       `}</style>
     </div>

@@ -25,6 +25,10 @@ export default ({ product, quantity, remove, setQuantity }) => {
 			.cart-item  {
 				text-align: left;
 			}
+			
+	        .cart-item td:last-child {
+	          text-align: right;
+	        }
 
 			.cart-item img {
 				width: 10em;

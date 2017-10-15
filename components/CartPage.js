@@ -7,7 +7,9 @@ export default inject('store')(observer(({ store }) => {
   //render message if cart is empty
   if (!store.cart.length) {
     return (
-      <p>Cart is empty <Link href="/"><a>Continue Shopping</a></Link></p>
+      <div className="error">
+        <p>Cart is empty <Link href="/"><a>Continue Shopping</a></Link></p>
+      </div>
     )
   }
 
@@ -17,9 +19,10 @@ export default inject('store')(observer(({ store }) => {
       <CartList />
 
       <style jsx>{`
-        .cart-page {
-          background-color: #f9f9f9;
+        .cart-page h2 {
+          padding: 40px;
         }
+
       `}</style>
     </div>
   )
