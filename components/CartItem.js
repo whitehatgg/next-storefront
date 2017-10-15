@@ -18,7 +18,7 @@ export default ({ product, quantity, remove, setQuantity }) => {
 		    <span className="price"><FormattedNumber value={ product.price * quantity } style="currency" currency={ 'USD' } /></span>
 	    </td>
   		<td>
-		    <button onClick={ remove }>X</button>
+		    <a onClick={ remove }>X</a>
 	    </td>
 
 		<style jsx>{`

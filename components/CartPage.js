@@ -22,7 +22,6 @@ export default inject('store')(observer(({ store }) => {
         .cart-page h2 {
           padding: 40px;
         }
-
       `}</style>
     </div>
   )

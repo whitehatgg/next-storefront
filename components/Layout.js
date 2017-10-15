@@ -26,9 +26,34 @@ export default inject('store')(observer(({ children, title, store }) => {
           margin: 0;
           padding: 0;
           box-sizing: border-box;
+          outline: none;
         }
 
-        p {
+        table {
+          border-collapse: collapse;
+        }
+
+        table tbody tr:last-child td {
+          border-bottom: 2px solid #e9ecef;
+        }
+
+        table td, table th {
+          vertical-align: middle;
+          padding-top: 1em;
+          padding-bottom: 1em;
+        }
+
+        table.stripe td, table.stripe th {
+          border-bottom: 2px solid #e9ecef;
+          padding-top: 2em;
+          padding-bottom: 2em;
+        }
+
+        table tr th {
+          vertical-align: bottom;
+        }
+
+        p, table {
           font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
           color: #586069;
         }
@@ -36,6 +61,7 @@ export default inject('store')(observer(({ children, title, store }) => {
         a {
           color: #777777;
           text-decoration: none;
+          cursor: pointer;
         }
 
         a:hover {
@@ -64,7 +90,7 @@ export default inject('store')(observer(({ children, title, store }) => {
           }
         }
 
-        button {
+        button, a.button {
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
@@ -72,8 +98,8 @@ export default inject('store')(observer(({ children, title, store }) => {
           padding: 1.3em 2em;
           margin: 0.5em 0;
           color: white;
-          background: black;
-          border: 2px solid black;
+          background: #343436;
+          border: 2px solid #343436;
           -webkit-transition: all 0.1s;
           transition: all 0.1s;
           font-size: 12px;
@@ -85,9 +111,14 @@ export default inject('store')(observer(({ children, title, store }) => {
           user-select: none;
         }
 
-        button:hover {
+        button.white, a.button.white {
           color: black;
           background: white;
+        }
+
+        button:hover, a.button:hover {
+          color: white;
+          background: black;
         }
 
         input {
@@ -103,10 +134,6 @@ export default inject('store')(observer(({ children, title, store }) => {
           -webkit-transition: all 0.1s;
           transition: all 0.1s;
           font-size: 14px;
-        }
-
-        .quantity {
-          display: inline-block;
         }
 
         h1, h2, h3 {
@@ -144,13 +171,17 @@ export default inject('store')(observer(({ children, title, store }) => {
 
         .container .content {
           margin: 0 auto;
-          padding: 0;
+          padding: 70px 0 0;
           text-align: center;
         }
 
         .error {
           padding-top: 120px;
           display: block;
+        }
+
+        .hidden {
+          display:none;
         }
       `}</style>
     </div>

@@ -6,7 +6,7 @@ import CartItem from './CartItem'
 export default inject('store')(observer(({ store }) => {
   return (
     <div className="cart-list">
-      <table className="cart-table">
+      <table className="cart-table stripe">
         <thead>
           <tr>
             <th>Product</th>
@@ -36,12 +36,14 @@ export default inject('store')(observer(({ store }) => {
             <td>
               <div>Cart Overview</div>
               <div>Subtotal</div>
+              <div>Tax</div>
               <div>Total</div>
             </td>
             <td></td>
             <td>
               <div>&nbsp;</div>
               <div><FormattedNumber value={ store.cartSubTotal } style="currency" currency={ 'USD' } /></div>
+              <div><FormattedNumber value={ store.cartTax } style="currency" currency={ 'USD' } /></div>
               <div><FormattedNumber value={ store.cartTotal } style="currency" currency={ 'USD' } /></div>
             </td>
           </tr>
@@ -49,7 +51,7 @@ export default inject('store')(observer(({ store }) => {
       </table>
       <div className="actions">
         <Link href={ "/" }><a className="push-left" >Continue Shopping</a></Link>
-        <Link href={ "#" }><button className="push-right" >{ 'Checkout (' }<FormattedNumber value={ store.cartTotal } style="currency" currency={ 'USD' } />{ ')' }</button></Link>
+        <button className="push-right" >{ 'Checkout (' }<FormattedNumber value={ store.cartTotal } style="currency" currency={ 'USD' } />{ ')' }</button>
       </div>
       <style jsx>{`
 
@@ -72,10 +74,6 @@ export default inject('store')(observer(({ store }) => {
           text-align: right;
         }
 
-        .cart-list .cart-table th, .cart-list .cart-table td {
-          padding: 0 0.25em;
-        }
-
         .cart-list td:last-child {
           text-align: right;
         }
@@ -83,13 +81,7 @@ export default inject('store')(observer(({ store }) => {
         .cart-list .actions {
           display: block;
           width: 100%;
-          padding-bottom: 70px;
-        }
-
-        @media (max-width: 600px) {
-          .cart-list .cart-table th:nth-child(3), .cart-list .cart-table td:nth-child(3) {
-            display: none;
-          }
+          padding: 70px 0;
         }
       `}</style>
     </div>

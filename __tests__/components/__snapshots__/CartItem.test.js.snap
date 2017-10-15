@@ -3,36 +3,36 @@
 exports[`CartItem Test CartItem shows item 1`] = `
 <div>
   <tr
-    className="jsx-3374668489 cart-item"
+    className="jsx-1118603124 cart-item"
   >
     <td
-      className="jsx-3374668489"
+      className="jsx-1118603124"
     >
       <img
-        className="jsx-3374668489"
+        className="jsx-1118603124"
         onClick={[Function]}
         src="/static/blue-stripe-stoneware-plate.jpg"
       />
     </td>
     <td
-      className="jsx-3374668489"
+      className="jsx-1118603124"
     >
       <div
-        className="jsx-3374668489"
+        className="jsx-1118603124"
       >
         Kiriko
       </div>
       <div
-        className="jsx-3374668489"
+        className="jsx-1118603124"
       >
         Blue Stripe Stoneware Plate
       </div>
     </td>
     <td
-      className="jsx-3374668489"
+      className="jsx-1118603124"
     >
       <input
-        className="jsx-3374668489"
+        className="jsx-1118603124"
         min="1"
         onChange={[Function]}
         type="number"
@@ -40,10 +40,10 @@ exports[`CartItem Test CartItem shows item 1`] = `
       />
     </td>
     <td
-      className="jsx-3374668489"
+      className="jsx-1118603124"
     >
       <span
-        className="jsx-3374668489 price"
+        className="jsx-1118603124 price"
       >
         <span>
           $40.00
@@ -51,14 +51,14 @@ exports[`CartItem Test CartItem shows item 1`] = `
       </span>
     </td>
     <td
-      className="jsx-3374668489"
+      className="jsx-1118603124"
     >
-      <button
-        className="jsx-3374668489"
+      <a
+        className="jsx-1118603124"
         onClick={[Function]}
       >
         X
-      </button>
+      </a>
     </td>
   </tr>
 </div>

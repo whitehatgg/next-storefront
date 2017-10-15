@@ -7,7 +7,7 @@ export default inject('store')(observer(({ store }) => {
 		<div className="nav">
 			<h1 className="col col-3">
 			  <Link href="/">
-			    <img src="/static/logo.png"/>
+			    <a><img src="/static/logo.png"/></a>
 			  </Link>
 			</h1>
 			<nav className="col col-6">
@@ -22,6 +22,9 @@ export default inject('store')(observer(({ store }) => {
 
 			<style jsx>{`
 				.nav {
+				  position: fixed;
+				  z-index: 1000;
+				  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 			      background: #ffffff;
 				  display: block;
 				  width: 100%;

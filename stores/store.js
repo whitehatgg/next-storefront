@@ -6,6 +6,7 @@ export default class Store {
   @observable cart = []
   @observable tax = 0.10
   @observable quantity = 1
+  @observable showModal = false
 
   constructor (products) {
     this.products = products
@@ -29,6 +30,11 @@ export default class Store {
     }, 0)
   }
 
+  @computed get cartTax() {
+    let total = this.cartSubTotal
+    return total * this.tax
+  }
+
   @computed get cartSubTotal() {
     return this.cart.reduce((accumulator, cartProduct) => {
       const product = this.getProductById(cartProduct.id)
@@ -38,7 +44,8 @@ export default class Store {
 
   @computed get cartTotal() {
     let total = this.cartSubTotal
-    return total += total * this.tax
+    let tax = this.cartTax
+    return total += tax
   }
 
   @action addToCart = (productId, quantity) => {
@@ -82,5 +89,9 @@ export default class Store {
 
   @action resetProductQuantity = () => {
     this.setProductQuantity(1)
+  }
+
+  @action setShowModal = (showModal) => {
+    this.showModal = showModal
   }
 }

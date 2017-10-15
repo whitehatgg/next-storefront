@@ -5,11 +5,11 @@ export default ({ product, add }) => {
   return (
   	<div className="product-item" >
 	    <div className="overlay-container">
-	    	<img src={ `/static/${ product.image }` } />
+	    	<div className="product-img"></div>
 	    	<div className="overlay">
-			    <button onClick={ add }>Add to Cart</button>
 			    <Link href={{ pathname: '/product', query: { id: product.id } }}><button>View Details</button></Link>
-	    	</div>
+	    	    <button onClick={ add }>Add to Cart</button>
+			</div>
 	    </div>
 	    <span>{ product.brand }</span>
 	    <h4>{ product.title }</h4>
@@ -31,6 +31,13 @@ export default ({ product, add }) => {
 
 			.product-item .overlay-container .overlay {
 				display: none;
+				padding-top: 40px;
+			}
+
+
+			.product-item .overlay-container .overlay button {
+				display: block;
+				margin: 40px auto auto;
 			}
 
 			.product-item h4 {
@@ -44,7 +51,10 @@ export default ({ product, add }) => {
 				padding-bottom: 10px;
 			}
 
-			.product-item .overlay-container img {
+			.product-item .overlay-container .product-img {
+				background-size: cover;
+    			background-position: center center;
+    			background-image: url("/static/${ product.image }");
 				width: 18em;
 				height: 18em;
 				position: relative;
@@ -53,17 +63,10 @@ export default ({ product, add }) => {
 				transition: box-shadow 0.25s;
 			}
 
-			@media(max-width: 600px) {
-				.product-item .overlay-container img {
-					width: 100vw;
-					height: 100vw;
-				}
-			}
-
 			.product-item:hover .overlay-container .overlay {
 				display: block;
 				position: absolute;
-				background-color:rgba(0, 0, 0, 0.5);
+				background-color:rgba(0, 0, 0, 0.1);
 				top: 0;
 				left: 0;
 				width: 100%;
