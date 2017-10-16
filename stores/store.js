@@ -52,7 +52,7 @@ export default class Store {
     const newQuantity = parseInt(quantity, 10)
     const newProductId = parseInt(productId, 10)
     //check if newQuantity is valid
-    if (newQuantity) {
+    if (!Number.isNaN(newQuantity)) {
       const cartIndex = this.findProductInCart(newProductId)
       //if does not exist add to cart, else increment quantity
       if (cartIndex !== -1) {
@@ -77,14 +77,16 @@ export default class Store {
     const newQuantity = parseInt(quantity, 10)
     const newProductId = parseInt(productId, 10)
     const cartIndex = this.findProductInCart(newProductId)
-    if (newQuantity && cartIndex  !== -1) {
+    if (!Number.isNaN(newQuantity) && cartIndex  !== -1) {
       this.cart[cartIndex].quantity = newQuantity
     }
   }
 
   @action setProductQuantity = (quantity) => {
     const newQuantity = parseInt(quantity, 10)
-    this.quantity = newQuantity
+    if (!Number.isNaN(newQuantity)) {
+      this.quantity = newQuantity
+    }
   }
 
   @action resetProductQuantity = () => {

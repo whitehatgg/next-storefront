@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductItem Test shows item in Snapshot Testing 1`] = `
+<div
+  className="jsx-3577587527 product-item"
+>
+  <div
+    className="jsx-3577587527 overlay-container"
+  >
+    <div
+      className="jsx-3577587527 product-img"
+    />
+    <div
+      className="jsx-3577587527 overlay"
+    >
+      <a
+        className="jsx-3577587527 button"
+        href="/product?id=12"
+        onClick={[Function]}
+      >
+        View Details
+      </a>
+      <button
+        className="jsx-3577587527"
+        onClick={[Function]}
+      >
+        Add to Cart
+      </button>
+    </div>
+  </div>
+  <span
+    className="jsx-3577587527"
+  >
+    Kiriko
+  </span>
+  <h4
+    className="jsx-3577587527"
+  >
+    Blue Stripe Stoneware Plate
+  </h4>
+  <span
+    className="jsx-3577587527 price"
+  >
+    <span>
+      $40.00
+    </span>
+  </span>
+</div>
+`;

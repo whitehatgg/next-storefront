@@ -1,12 +1,12 @@
 import { shallow } from 'enzyme'
 import { IntlProvider } from 'react-intl'
 import renderer from 'react-test-renderer'
-import CartItem from '../../components/CartItem.js'
+import ProductItem from '../../components/ProductItem.js'
 import products from '../../data/products.json'
 import formats from '../../constants/formats'
 import Store from '../../stores/store'
 
-describe('CartItem Test', () => {
+describe('ProductItem Test', () => {
   let store = null
   beforeEach(() => {
     store = new Store(products)
@@ -15,25 +15,23 @@ describe('CartItem Test', () => {
   it('shows item', () => {
     const product = store.products[0]
     const shallowComponent = shallow(
-      <CartItem
+      <ProductItem 
         product={ product }
-        quantity={ 1 }
-        remove={() => store.removeFromCart(product.id, 1) }
-        setQuantity={ (event) => store.setCartQuantity(product.id, event.target.value) }
+        key={ product.id }
+        add={() => store.addToCart(product.id, 1) }
       />
     )
-    expect(shallowComponent.find('input').props().value).toEqual(1)
+    expect(shallowComponent.find('button').text()).toEqual('Add to Cart')
   })
 
   it('shows item in Snapshot Testing', () => {
     const product = store.products[0]
     const shallowComponent = renderer.create(
       <IntlProvider locale="en" formats={ formats } defaultFormats={ formats } >
-        <CartItem
+        <ProductItem 
           product={ product }
-          quantity={ 1 }
-          remove={() => store.removeFromCart(product.id, 1) }
-          setQuantity={ (event) => store.setCartQuantity(product.id, event.target.value) }
+          key={ product.id }
+          add={() => store.addToCart(product.id, 1) }
         />
       </IntlProvider>
     )

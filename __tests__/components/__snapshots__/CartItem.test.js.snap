@@ -1,70 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CartItem Test CartItem shows item 1`] = `
-<div>
-  <tr
-    className="jsx-1118603124 cart-item"
+exports[`CartItem Test shows item in Snapshot Testing 1`] = `
+<tr
+  className="jsx-1118603124 cart-item"
+>
+  <td
+    className="jsx-1118603124"
   >
-    <td
+    <a
       className="jsx-1118603124"
+      href="/product?id=12"
+      onClick={[Function]}
     >
-      <a
+      <img
         className="jsx-1118603124"
-        href="/product?id=12"
-        onClick={[Function]}
-      >
-        <img
-          className="jsx-1118603124"
-          src="/static/blue-stripe-stoneware-plate.jpg"
-        />
-      </a>
-    </td>
-    <td
-      className="jsx-1118603124"
-    >
-      <div
-        className="jsx-1118603124"
-      >
-        Kiriko
-      </div>
-      <div
-        className="jsx-1118603124"
-      >
-        Blue Stripe Stoneware Plate
-      </div>
-    </td>
-    <td
-      className="jsx-1118603124"
-    >
-      <input
-        className="jsx-1118603124"
-        min="1"
-        onChange={[Function]}
-        type="number"
-        value={1}
+        src="/static/blue-stripe-stoneware-plate.jpg"
       />
-    </td>
-    <td
+    </a>
+  </td>
+  <td
+    className="jsx-1118603124"
+  >
+    <div
       className="jsx-1118603124"
     >
-      <span
-        className="jsx-1118603124 price"
-      >
-        <span>
-          $40.00
-        </span>
+      Kiriko
+    </div>
+    <div
+      className="jsx-1118603124"
+    >
+      Blue Stripe Stoneware Plate
+    </div>
+  </td>
+  <td
+    className="jsx-1118603124"
+  >
+    <input
+      className="jsx-1118603124"
+      min="1"
+      onChange={[Function]}
+      type="number"
+      value={1}
+    />
+  </td>
+  <td
+    className="jsx-1118603124"
+  >
+    <span
+      className="jsx-1118603124 price"
+    >
+      <span>
+        $40.00
       </span>
-    </td>
-    <td
+    </span>
+  </td>
+  <td
+    className="jsx-1118603124"
+  >
+    <a
       className="jsx-1118603124"
+      onClick={[Function]}
     >
-      <a
-        className="jsx-1118603124"
-        onClick={[Function]}
-      >
-        X
-      </a>
-    </td>
-  </tr>
-</div>
+      X
+    </a>
+  </td>
+</tr>
 `;
