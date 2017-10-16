@@ -8,7 +8,7 @@ export default inject('store', 'router')(observer(({ store, router }) => {
   if (!product) {
     return (
       <div className="error">
-        <p>Product not available <Link href="/"><a>Go back home</a></Link></p>
+        <p>Product not available <Link href="/"><a href="/">Go back home</a></Link></p>
       </div>
     )
   }
@@ -16,7 +16,7 @@ export default inject('store', 'router')(observer(({ store, router }) => {
   return (
     <div className="product-page">
       <ul className="breadcrumb">
-        <li><Link href="/"><a>Home</a></Link></li>
+        <li><Link href="/"><a href="/">Home</a></Link></li>
         <li>/</li>
         <li className="current">{ product.title }</li>
       </ul>

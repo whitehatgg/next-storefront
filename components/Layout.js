@@ -68,28 +68,6 @@ export default inject('store')(observer(({ children, title, store }) => {
           color: #222222;
         }
 
-        @-webkit-keyframes openUp {
-          0% {
-            -webkit-transform: translate(-50%, -50%) scale(0.5);
-                    transform: translate(-50%, -50%) scale(0.5);
-          }
-          100% {
-            -webkit-transform: translate(-50%, -50%) scale(1);
-                    transform: translate(-50%, -50%) scale(1);
-          }
-        }
-
-        @keyframes openUp {
-          0% {
-            -webkit-transform: translate(-50%, -50%) scale(0.5);
-                    transform: translate(-50%, -50%) scale(0.5);
-          }
-          100% {
-            -webkit-transform: translate(-50%, -50%) scale(1);
-                    transform: translate(-50%, -50%) scale(1);
-          }
-        }
-
         button, a.button {
           -webkit-appearance: none;
           -moz-appearance: none;

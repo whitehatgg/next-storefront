@@ -8,7 +8,7 @@ export default inject('store')(observer(({ store }) => {
   if (!store.cart.length) {
     return (
       <div className="error">
-        <p>Cart is empty <Link href="/"><a>Continue Shopping</a></Link></p>
+        <p>Cart is empty <Link href="/"><a href="/">Continue Shopping</a></Link></p>
       </div>
     )
   }

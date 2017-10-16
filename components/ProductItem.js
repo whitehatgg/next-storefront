@@ -7,7 +7,7 @@ export default ({ product, add }) => {
 	    <div className="overlay-container">
 	    	<div className="product-img"></div>
 	    	<div className="overlay">
-			    <Link href={{ pathname: '/product', query: { id: product.id } }}><button>View Details</button></Link>
+			    <Link href={{ pathname: '/product', query: { id: product.id } }}><a href={ `/product?id=${ product.id }` } className="button">View Details</a></Link>
 	    	    <button onClick={ add }>Add to Cart</button>
 			</div>
 	    </div>

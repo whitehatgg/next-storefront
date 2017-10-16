@@ -12,8 +12,8 @@ export default inject('store')(observer(({ store }) => {
 			</h1>
 			<nav className="col col-6">
 			  <ul>
-			    <li><Link prefetch href="/"><a>Home</a></Link></li>
-			    <li><Link prefetch href="/cart"><a>Cart</a></Link></li>
+			    <li><Link prefetch href="/"><a href="/">Home</a></Link></li>
+			    <li><Link prefetch href="/cart"><a href="/cart">Cart</a></Link></li>
 			  </ul>
 			</nav>
 			<div className="col col-3">

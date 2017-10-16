@@ -5,7 +5,7 @@ export default ({ product, quantity, remove, setQuantity }) => {
   return (
   	<tr className="cart-item" >
   		<td>
-			<Link href={{ pathname: '/product', query: { id: product.id } }}><a><img src={ `/static/${ product.image }` } /></a></Link>
+			<Link href={{ pathname: '/product', query: { id: product.id } }}><a href={ `/product?id=${ product.id }` }><img src={ `/static/${ product.image }` } /></a></Link>
 	  	</td>
   		<td>
 		    <div>{ product.brand }</div>

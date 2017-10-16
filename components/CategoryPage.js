@@ -11,7 +11,7 @@ export default inject('store')(observer(({ store }) => {
         </div>
       </div>
 
-      <ProductList products={ store.products } addToCart={ store.addToCart } />
+      <ProductList />
 
       <style jsx>{`
         .hero-container {
