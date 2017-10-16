@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 export default inject('store', 'router')(observer(({ store, router }) => {
   const product = store.getProductById(router.query.id)
-  //render message if can't find product
   if (!product) {
     return (
       <div className="error">

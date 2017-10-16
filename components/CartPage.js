@@ -4,7 +4,6 @@ import Link from 'next/link'
 import CartList from './CartList'
 
 export default inject('store')(observer(({ store }) => {
-  //render message if cart is empty
   if (!store.cart.length) {
     return (
       <div className="error">

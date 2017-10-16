@@ -13,7 +13,7 @@ describe('CartItem Test', () => {
   })
 
   it('CartItem shows item', () => {
-    const product = store.products[0];
+    const product = store.products[0]
     const component = shallow(<CartItem
       product={ product }
       quantity={ 1 }
@@ -24,7 +24,7 @@ describe('CartItem Test', () => {
   })
 
   it('CartItem shows item', () => {
-    const product = store.products[0];
+    const product = store.products[0]
     const component = renderer.create(<IntlProvider locale="en" formats={ formats } defaultFormats={ formats } ><div><CartItem
       product={ product }
       quantity={ 1 }

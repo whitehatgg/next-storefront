@@ -56,7 +56,7 @@ export default class Store {
       const cartIndex = this.findProductInCart(newProductId)
       //if does not exist add to cart, else increment quantity
       if (cartIndex !== -1) {
-        this.cart[cartIndex].quantity += newQuantity;
+        this.cart[cartIndex].quantity += newQuantity
       } else {
         this.cart.push({
           id: newProductId,
