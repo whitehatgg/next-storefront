@@ -33,10 +33,6 @@ export default inject('store')(observer(({ children, title, store }) => {
           border-collapse: collapse;
         }
 
-        table.stripe {
-          table-layout: fixed;
-        }
-
         table tbody tr:last-child td {
           border-bottom: 2px solid #e9ecef;
         }
