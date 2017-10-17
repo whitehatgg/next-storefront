@@ -24,7 +24,7 @@ export default inject('store')(observer(({ store }) => {
               quantity={ cartProduct.quantity }
               key={ cartProduct.id }
               remove={() => store.removeFromCart(cartProduct.id, 1) }
-              setQuantity={ (event) => store.setCartQuantity(cartProduct.id, event.target.value) }
+              setQuantity={ (value) => store.setCartQuantity(cartProduct.id, value) }
             />
           })
         }

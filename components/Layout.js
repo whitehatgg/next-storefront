@@ -31,6 +31,7 @@ export default inject('store')(observer(({ children, title, store }) => {
 
         table {
           border-collapse: collapse;
+          table-layout: fixed;
         }
 
         table tbody tr:last-child td {
@@ -106,7 +107,6 @@ export default inject('store')(observer(({ children, title, store }) => {
           appearance: none;
           padding: 1.2em 0.9em;
           margin: 0.5em 0.5em 0.5em 0;
-          width: 70px;
           background: #f2f2f2;
           border: 1px solid #f2f2f2;
           -webkit-transition: all 0.1s;
@@ -147,6 +147,10 @@ export default inject('store')(observer(({ children, title, store }) => {
           width: 25%;
         }
 
+        .hidden {
+          display: none;
+        }
+
         .container .content {
           margin: 0 auto;
           padding: 70px 0 0;
@@ -156,10 +160,6 @@ export default inject('store')(observer(({ children, title, store }) => {
         .error {
           padding-top: 120px;
           display: block;
-        }
-
-        .hidden {
-          display:none;
         }
       `}</style>
     </div>

@@ -19,25 +19,9 @@ describe('CartItem Test', () => {
         product={ product }
         quantity={ 1 }
         remove={() => store.removeFromCart(product.id, 1) }
-        setQuantity={ (event) => store.setCartQuantity(product.id, event.target.value) }
+        setQuantity={ (value) => store.setCartQuantity(product.id, value) }
       />
     )
-    expect(shallowComponent.find('input').props().value).toEqual(1)
-  })
-
-  it('shows item in Snapshot Testing', () => {
-    const product = store.products[0]
-    const shallowComponent = renderer.create(
-      <IntlProvider locale="en" formats={ formats } defaultFormats={ formats } >
-        <CartItem
-          product={ product }
-          quantity={ 1 }
-          remove={() => store.removeFromCart(product.id, 1) }
-          setQuantity={ (event) => store.setCartQuantity(product.id, event.target.value) }
-        />
-      </IntlProvider>
-    )
-    const tree = shallowComponent.toJSON()
-    expect(tree).toMatchSnapshot()
+    expect(shallowComponent.find('img').prop('src')).toEqual('/static/blue-stripe-stoneware-plate.jpg')
   })
 })

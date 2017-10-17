@@ -1,6 +1,7 @@
 import { FormattedNumber } from 'react-intl'
 import { inject, observer } from 'mobx-react'
 import Link from 'next/link'
+import NumberPicker from './NumberPicker'
 
 export default inject('store', 'router')(observer(({ store, router }) => {
   const product = store.getProductById(router.query.id)
@@ -26,7 +27,7 @@ export default inject('store', 'router')(observer(({ store, router }) => {
           <h2>{ product.title }</h2>
           <span className="price"><FormattedNumber value={ product.price } style="currency" currency={ 'USD' } /></span>
           <p className="description">{ product.description }</p>
-          <input type="number" min="1" value={ store.quantity } onChange={ (event) => store.setProductQuantity(event.target.value) } />
+          <NumberPicker min={ 1 } value={ store.quantity } onChange={ (value) => store.setProductQuantity(value) } />
           <button onClick={ () => store.addToCart(product.id, store.quantity) }>Add to Cart</button>
         </div>
       </div>
