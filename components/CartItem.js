@@ -13,7 +13,7 @@ export default ({ product, quantity, remove, setQuantity }) => {
 		    <div>{ product.title }</div>
 	    </td>
   		<td>
-      		<NumberPicker min={ 1 } value={ quantity } onChange={ setQuantity } />
+      		<NumberPicker min={ 1 } max={ 999 } value={ quantity } onChange={ setQuantity } />
 	    </td>
   		<td>
 		    <span className="price"><FormattedNumber value={ product.price * quantity } style="currency" currency={ 'USD' } /></span>

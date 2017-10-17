@@ -31,6 +31,9 @@ export default inject('store')(observer(({ children, title, store }) => {
 
         table {
           border-collapse: collapse;
+        }
+
+        table.stripe {
           table-layout: fixed;
         }
 

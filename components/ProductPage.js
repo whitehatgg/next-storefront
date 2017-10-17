@@ -27,7 +27,7 @@ export default inject('store', 'router')(observer(({ store, router }) => {
           <h2>{ product.title }</h2>
           <span className="price"><FormattedNumber value={ product.price } style="currency" currency={ 'USD' } /></span>
           <p className="description">{ product.description }</p>
-          <NumberPicker min={ 1 } value={ store.quantity } onChange={ (value) => store.setProductQuantity(value) } />
+          <NumberPicker min={ 1 } max={ 999 } value={ store.quantity } onChange={ (value) => store.setProductQuantity(value) } />
           <button onClick={ () => store.addToCart(product.id, store.quantity) }>Add to Cart</button>
         </div>
       </div>

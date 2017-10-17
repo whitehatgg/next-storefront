@@ -26,6 +26,7 @@ export default (props) => {
 				    text-align: center;
 				    cursor: default;
 				    background-color: #dcdcdc;
+				    cursor: pointer;
 		        }
 
 		        .number-picker .react-numeric-input b i {
