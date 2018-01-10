@@ -2,7 +2,7 @@ import { inject, observer } from 'mobx-react'
 import Link from 'next/link'
 import CartMenu from './CartMenu'
 
-export default inject('store')(observer(({ store }) => {
+export default ({ store }) => {
 	return (
 		<div className="nav">
 			<h1 className="col col-3">
@@ -60,4 +60,4 @@ export default inject('store')(observer(({ store }) => {
 	      	`}</style>
 		</div>
 	)
-}))
+}

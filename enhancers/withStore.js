@@ -1,7 +1,7 @@
 import { compose, setStatic, withProps } from 'recompose'
 import { initStore } from '../middlewares/storeMiddleware'
-import Store from '../stores/store'
-import products from '../data/products.json'
+import Store from '../store/store'
+import products from '../static/products.json'
 
 export default compose(
   // set the static async method getInitialProps
