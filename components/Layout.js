@@ -4,7 +4,7 @@ import formats from '../constants/formats'
 import Head from 'next/head'
 import Nav from './Nav'
 
-function Page ({ children, title }) {
+function Layout ({ children, title }) {
   return (
     <IntlProvider locale="en" formats={ formats } defaultFormats={ formats } > 
       <div className="container">
@@ -169,4 +169,4 @@ function Page ({ children, title }) {
   )
 }
 
-export default connect(state => state)(Page)
+export default connect(state => state)(Layout)
